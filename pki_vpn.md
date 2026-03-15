@@ -69,3 +69,12 @@ Smooker иска shared tmux между двамата. Claude пуска сес
 Claude: "Какво ще сервира nginx?"
 
 > Smooker: "ще ми сервира на балкона.. Ай сиктир ;)"
+
+## APRS Beacon Type (2026-03-15)
+
+12 часа дебъг на APRS tracker. Tracker-ът работи перфектно. APRS-IS stream пълен с LZ станции.
+smooker щрака от Baofeng-а през 2 репитера. Нищо не идва.
+
+Причина: **Beacon Type = Fixed** вместо **GPS**.
+
+> smooker: "моля те, не се базикай с мен! много..."
