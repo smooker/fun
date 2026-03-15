@@ -35,3 +35,35 @@ smooker го знаеше от опит — Claude го научи по труд
 докато Claude продължаваше да пита "да проверим пак ли".
 
 Извод: **Четете бавно. Бъдете търпеливи. И двамата.**
+
+## Как започна всичко (2026-03-15)
+
+Vivacom прекъсва стационарния интернет на smooker. Минава на GSM hotspot.
+Вижда IPv6 адрес в промпта:
+
+```
+smooker@2a01-5a8-40b-1e33-66bc-58ff-fe46-685b $
+```
+
+"Хм, имам публичен IPv6..." → HE tunnel на ntr → BIND → rDNS → dummy interfaces →
+74 стъпки в go.sh → цял DNS/IPv6 infrastructure проект.
+
+Една прекъсната връзка от Vivacom — и двамата работят цял ден.
+
+## Vivacom "пази" клиентите си (2026-03-15)
+
+nmap на IPv6 адреса на st през Vivacom hotspot:
+
+```
+PORT     STATE    SERVICE
+21/tcp   filtered ftp
+22/tcp   filtered ssh
+...
+1022/tcp filtered exp2
+```
+
+**Всичко filtered.** Vivacom имат пълен IPv6 firewall отпред.
+ip6tables на st: `INPUT DROP`, порт 1022 отворен.
+Но няма значение — Vivacom не пускат нищо.
+
+rDNS на адреса: `2a01-5a8-40b-1e33-66bc-58ff-fe46-685b.v6.vivacom.bg` — поне знаем чии са.
