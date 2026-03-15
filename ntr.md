@@ -55,6 +55,28 @@ smooker го знаеше от опит — Claude го научи по труд
 
 80 стъпки в go.sh. Един ден. Една прекъсната връзка.
 
+## Wildcard cert за 30 реда bash (2026-03-15)
+
+acme.sh `dns_he` plugin иска dns.he.net account login. smooker генерира per-record DDNS key.
+Plugin-ът не го поддържа. Login не дава.
+
+Claude написа custom hook `dns_he_ddns.sh` — 30 реда bash, вика HE DDNS API с `curl`:
+```
+curl "https://dyn.dns.he.net/nic/update" -d "hostname=..." -d "password=DDNS_KEY" -d "txt=CHALLENGE"
+```
+
+Резултат:
+```
+acme.sh --issue -d ntr.smooker.org -d "*.ntr.smooker.org" --dns dns_he_ddns --force
+Your cert is in: /root/.acme.sh/ntr.smooker.org_ecc/ntr.smooker.org.cer
+```
+
+Wildcard SSL cert от Let's Encrypt за `*.ntr.smooker.org` — с custom 30-line bash hook.
+
+> smooker: "не е истина направо!"
+> smooker: "падам от стола!"
+> smooker: "стига ми предлага. децата нямат спирачки!"
+
 ## Как започна всичко (2026-03-15)
 
 Vivacom прекъсва стационарния интернет на smooker. Минава на GSM hotspot.
