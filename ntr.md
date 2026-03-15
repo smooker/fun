@@ -36,6 +36,25 @@ smooker го знаеше от опит — Claude го научи по труд
 
 Извод: **Четете бавно. Бъдете търпеливи. И двамата.**
 
+## Пълният кръг (2026-03-15)
+
+1. Vivacom прекъсва стационарния интернет
+2. smooker минава на GSM hotspot
+3. Вижда IPv6 в промпта: `smooker@2a01-5a8-40b-1e33-66bc-58ff-fe46-685b`
+4. "Хм, имам публичен IPv6..."
+5. HE tunnel на ntr (Budapest, 55ms)
+6. BIND DNS, reverse zones, rDNS delegation
+7. nginx IPv6, AAAA записи
+8. Отваря https://ntr.smooker.org в браузъра
+9. Header bar показва: **`you: 2a01:5a8:40b:1e33:66bc:58ff:fe46:685b (IPv6)`**
+
+Същият адрес, който видя в промпта сутринта — сега го вижда на собствения си сайт,
+пътувал през: Vivacom GSM → интернет → HE Budapest → ntr Neterra → nginx → обратно.
+
+> wow!
+
+80 стъпки в go.sh. Един ден. Една прекъсната връзка.
+
 ## Как започна всичко (2026-03-15)
 
 Vivacom прекъсва стационарния интернет на smooker. Минава на GSM hotspot.
