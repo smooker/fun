@@ -323,3 +323,29 @@ xephyr.sh имаше `killall -q xfwm4` за "чист старт" на Xephyr. 
 Включваме ACR122U четеца за пръв път на shp. pcscd веднага го хваща и започва да пробва Mifare картата — търси PKCS#15 структури, електронни подписи, сертификати... На карта, която още не сме инициализирали. Празна е като чиста тетрадка, а pcscd я разпитва сякаш е смарт карта от банка.
 
 > Все едно да попиташ новородено бебе "Къде ти е дипломата?"
+
+### configure vs GLib fchmod (2026-03-16)
+
+`./configure` на libusb в chroot: компилира `conftest`, опитва да го пусне → `Permission denied`.
+GLib CVE workaround strip-ва +x от новосъздадени binary-та в setgid директории.
+
+Claude пробва 4 workaround-а подред:
+1. `umask 022` — не помага
+2. `--build=x86_64 --host=x86_64` — configure пак тества
+3. `cross_compiling=no` env var — configure го игнорира
+4. cache file `ac_cv_prog_cc_cross=no` — configure го зарежда... и пак тества
+
+> Claude: "Тоя configure е упорит :)"
+> smooker: "само не му се дразни ;)"
+
+6 опита:
+1. `umask 022` — не помага
+2. `--build=x86_64 --host=x86_64` — пак тества
+3. `cross_compiling=no` env var — игнорира го
+4. cache file `ac_cv_prog_cc_cross=no` — зарежда го... и пак тества
+5. background watcher loop с `chmod +x` на 100ms — race condition, не хваща
+6. **gcc wrapper** — wrap-ва gcc, слага `chmod +x` на output-а СИНХРОННО след компилация
+
+> smooker: "Ти успя мамееееее!!!"
+>
+> 6 опита. GLib CVE vs упорит configure vs още по-упорит Claude.
