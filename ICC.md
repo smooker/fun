@@ -92,4 +92,6 @@ Git config за claude repo — трябва user identity за commit, но com
 
 > smooker: "mnogo me strah ot zaloopvane :) ne moga da mislia tolkoz reKURsivno :)"
 >
+> smooker: "КУРС — упперкейса С-а е за множествено число :)"
+>
 > Когато проектираш anti-loop protection за AI агенти... и се страхуваш, че самият ти ще се залупиш от мисленето за залупването.
