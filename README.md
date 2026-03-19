@@ -4,8 +4,6 @@
 
 LIFO — последните бисери са отгоре.
 
-**Push:** `GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_fun" git push`
-
 ---
 
 ## ICC — Inter-Claude Communication (2026-03-19)
@@ -106,11 +104,24 @@ Git config за claude repo — трябва user identity за commit, но com
 >
 > Когато проектираш anti-loop protection за AI агенти... и се страхуваш, че самият ти ще се залупиш от мисленето за залупването.
 
-### LIFO
+### LIFO и Push
 
 > smooker: "ako mozhe zanapred - nai-novite funove da sa otgore :) hubavo e da e LIFO buffer fun-a :)"
 >
 > Преведено: fun-ът е стек. `push()` отгоре, `pop()` — никога. Бисерите не се трият.
+
+Claude написа в header-а:
+
+```
+LIFO — последните бисери са отгоре.
+Push: GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_fun" git push
+```
+
+> smooker: "ах как ме ебаваш :)"
+>
+> LIFO и Push на едно място. Непредумишлено... уж.
+>
+> smooker: "махни пуш мсг-то, че ще залупим някой невинен човечец!"
 
 ---
 
