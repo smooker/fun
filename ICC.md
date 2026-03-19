@@ -87,3 +87,9 @@ Git config за claude repo — трябва user identity за commit, но com
 > smooker: "vkliuchi se. dobre e."
 >
 > Achievement unlocked: AI пали телевизора от затвора (chroot).
+
+### реКУРСИВНО мислене
+
+> smooker: "mnogo me strah ot zaloopvane :) ne moga da mislia tolkoz reKURsivno :)"
+>
+> Когато проектираш anti-loop protection за AI агенти... и се страхуваш, че самият ти ще се залупиш от мисленето за залупването.
