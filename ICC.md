@@ -88,7 +88,7 @@ Git config за claude repo — трябва user identity за commit, но com
 >
 > Achievement unlocked: AI пали телевизора от затвора (chroot).
 
-### реКУРСИВНО мислене
+### реКУРСсивно мислене
 
 > smooker: "mnogo me strah ot zaloopvane :) ne moga da mislia tolkoz reKURsivno :)"
 >
