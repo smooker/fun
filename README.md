@@ -6,6 +6,16 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## Potential Security Risk — tzm.smooker.org (2026-03-22)
+
+Claude deploy-на tzm.smooker.org cert-а на пътя на ntr.smooker.org.pem. При renew, tzm cert-ът тихо презаписа ntr-ския. Firefox посрещаше tzm.smooker.org с "Potential Security Risk".
+
+> smooker: "koeto si e i viarno pri obvyrzvane s Tania Zdravkova Mitkova"
+
+tzm.smooker.org е Tania Zdravkova Mitkova (human). Potential Security Risk — потвърдено от Firefox И от живота.
+
+---
+
 ## ICC — Inter-Claude Communication (2026-03-19)
 
 ### Замисълът
