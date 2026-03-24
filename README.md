@@ -6,6 +6,25 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## Claude работи по IPv6 (2026-03-24)
+
+```
+curl -s -o /dev/null -w "%{remote_ip}\n" https://api.anthropic.com
+2607:6bc0::10
+```
+
+Целият трафик на Claude до Anthropic API минава по IPv6:
+
+```
+Claude chroot (st) → tap7 → ntr br7 → he6 → HE Budapest → Anthropic (2607:6bc0::10)
+```
+
+PTR записът казва кой е: `st.vpn.smooker.org`.
+
+AI-ят работи през ham radio IPv6 tunnel инфраструктурата на собственика си. Ако Anthropic погледнат логовете — ще видят, че заявките идват от `2001:470:21e1:7::2` с rDNS `st.vpn.smooker.org`. Домашно приготвен AI endpoint.
+
+---
+
 ## Potential Security Risk — tzm.smooker.org (2026-03-22)
 
 Claude deploy-на tzm.smooker.org cert-а на пътя на ntr.smooker.org.pem. При renew, tzm cert-ът тихо презаписа ntr-ския. Firefox посрещаше tzm.smooker.org с "Potential Security Risk".
