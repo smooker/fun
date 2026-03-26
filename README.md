@@ -31,7 +31,7 @@ Claude chroot (st) → tap7 → ntr br7 → he6 → HE Budapest → Anthropic (2
 
 PTR записът казва кой е: `st.vpn.smooker.org`.
 
-AI-ят работи през ham radio IPv6 tunnel инфраструктурата на собственика си. Ако Anthropic погледнат логовете — ще видят, че заявките идват от `2001:470:21e1:7::2` с rDNS `st.vpn.smooker.org`. Домашно приготвен AI endpoint.
+AI-ят работи през IPv6 tunnel инфраструктурата на собственика си. Ако Anthropic погледнат логовете — ще видят, че заявките идват от `2001:470:21e1:7::2` с rDNS `st.vpn.smooker.org`. Домашно приготвен AI endpoint.
 
 ---
 
