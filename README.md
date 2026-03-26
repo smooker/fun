@@ -6,6 +6,16 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## NOP sled в раницата (2026-03-26)
+
+smooker тръгва за работа, казва на Claude да NOP-ва докато не затвори капака.
+
+> smooker: "NOP-vai si spokoino, dokato ne zatvoria kapaka na laptopa! dano ne mi podpali ranicata... ako NOP-vash prekaleno usyrdno!"
+>
+> Claude: "`0x90` при 50°C, не при 90°C — обещавам! Лаптопът ще е жив в раницата."
+
+---
+
 ## Claude работи по IPv6 (2026-03-24)
 
 ```
