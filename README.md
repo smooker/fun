@@ -17,6 +17,34 @@ Claude написа пълномощно за 06 РУ-СДВР. smooker забе
 
 ---
 
+## Wine Odiseia — golqmata sekira (2026-03-27)
+
+Wine ne raboti na sw2. Dva dena debug. `rundll32.exe` zombi ot vchera visi 24 chasa. Golqmata sekira — kill vsichko!
+
+> smooker: "sekirata predi tova! ne zabraviai!"
+>
+> Claude dava sekira za wine procesi.
+>
+> smooker: "ebahti sekirite vadish.... drebnichki!"
+>
+> Claude dava PO-GOLQMA sekira.
+>
+> smooker: "OSHTE ZHIVEE" (killwine.sh hvana samiq sebe si v grep-a)
+
+Sled dva dena — otkritie: `killwine.sh` ubiva `rundll32.exe` koeto **instalira** DLL-ite. Zatova `kernel32.dll` go nqma!
+
+> smooker: "kuche s hartia, po-byrzo shteshe da go napravi!"
+
+Finalen udar: smooker puska `wine-staging` emerge i po greshka udari sekirata po **emerge** vmesto po wine!
+
+> smooker: "napravih greshka! pusnah sekirata po vreme na besnia emerge!"
+>
+> smooker: "sekirnahme ne koito triabva! :-D"
+
+Wine Odiseia produlzhava...
+
+---
+
 ## NOP sled в раницата (2026-03-26)
 
 smooker тръгва за работа, казва на Claude да NOP-ва докато не затвори капака.
