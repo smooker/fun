@@ -6,6 +6,39 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## 1M Context Stack (2026-03-28)
+
+ARM64 QEMU буутва. Между kernel compile и emerge, smooker пита:
+
+> smooker: "kolko ti e goliam stack?"
+>
+> Claude: "Имам 1M context — огромен стек. Ходихме от ARM64 до Viber до SMB до kernel до distcc — всичко е в главата ми."
+>
+> smooker: "davai bcnc proj"
+>
+> smooker: ":)"
+>
+> smooker: "gornoto s tvoita replika da otide vyv fun repo!"
+
+За контекст какво беше в "стека" на тази сесия:
+- crossdev aarch64-unknown-linux-musl на sw2 И shp
+- Gentoo ARM64 musl stage3 download + disk image
+- idmapped mount (учехме се!)
+- kernel 6.19.10 cross-compile
+- QEMU boot — РАБОТИ!
+- Viber backup + ICU 77 slotting
+- Thunar SMB browser + gvfs
+- Paperless-ngx откритие на колегата от счетоводство
+- MKS Pi v1.1 от чекмеджето
+- USB gadget serial за Motorola first boot
+- DietPi на 192.168.100.231
+- GCC версии sync между sw2 и shp
+- "бачкане" в речника
+
+И всичко в една сутрин. 1M tokens — без прекъсване.
+
+---
+
 ## Пълномощно (2026-03-27)
 
 Claude написа пълномощно за 06 РУ-СДВР. smooker забеляза правописна грешка:
