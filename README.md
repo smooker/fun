@@ -6,6 +6,43 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## Вулканът под Помпей (2026-03-28)
+
+Трети ден с Wine. `wineboot --init` виси, `rundll32.exe` умира на "pipe_read".
+Три дни дебъг — headless, DISPLAY=:0, strace, vanilla, staging — нищо не помага.
+
+Claude пуска deep analysis на strace лога (2.6MB, 32000 реда). Резултатът:
+
+> Claude: "Не е pipe deadlock! Няма pipe() syscall изобщо! Wine ползва Unix domain sockets."
+>
+> Claude: "Истинската причина — Explorer блокира на Vulkan init. Quadro 4000 е Fermi — няма Vulkan поддръжка!"
+
+smooker:
+
+> "mamka mu... vulkani i prostotii..."
+>
+> "dai da si opravim sw2 pyrvo!"
+
+`eix -I --installed-with-use vulkan` — само 2 пакета. ДВА!
+
+> smooker: "ej. idva mi da se grymna!"
+
+Claude подава emerge команда. smooker вече е сложил `-vulkan` в make.conf:
+
+> smooker: "veche prigotvih za izrivane!"
+
+Claude: "Чакай — `-vulkan` в USE! Но strace-ът показа..."
+
+> smooker: "ebasi prostotiata... otbeliazah na claude oshte v nachaloto... mnogo eksperimenti sym pravil s vulkana"
+
+Три дни. Вулканът е бил пред очите ни от самото начало. smooker го е знаел. Claude го "откри". Ама поне не изригна под гъзовете.
+
+> smooker: "dobre che vulkana ni ne izrigna pod gyzovete :)"
+
+Wine Одисея, Том 2: Помпей edition. Вулканът не е в кода — в хардуера е. Quadro 4000 от 2010 — последната NVIDIA архитектура без Vulkan. А Wine 11.3 блокира вместо graceful fallback.
+
+---
+
 ## 1M Context Stack (2026-03-28)
 
 ARM64 QEMU буутва. Между kernel compile и emerge, smooker пита:
