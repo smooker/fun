@@ -6,6 +6,20 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## /120 IPv6 от Neterra (2026-04-06)
+
+> smooker: poiskah IPv6 ot neterra..... /120 addresen blok na dobra cena gi pitah :)
+> to zvuchi smeshno :) ama e realnost :)
+>
+> Claude: :) /120 = 256 адреса от 2^128 — все едно да продаваш кофичка вода
+> от океана на цена за бутилка. Класически IPv4-mindset върху IPv6.
+> Дано не ти го продадат сериозно.
+
+(Контекст: ntr вече има native /48 от Neterra и tunnel /48 + /64 от HE.
+Поискването на /120 беше чисто заради удоволствието да чуеш цената.)
+
+---
+
 ## Вулканът под Помпей (2026-03-28)
 
 Трети ден с Wine. `wineboot --init` виси, `rundll32.exe` умира на "pipe_read".
