@@ -6,6 +6,47 @@ LIFO — последните бисери са отгоре.
 
 ---
 
+## incrontab — 1 ред за 2 месеца мъки (2026-04-10)
+
+### GLib fchmod: the saga ends
+
+2026-03-16: GLib CVE workaround прави `fchmod(0600)` на всеки новосъздаден файл
+в setgid директория. Screenshots, копирани файлове — всичко 0600. Claude не може
+да ги чете. smooker трябва ръчно `chmod g+r` всеки път.
+
+6 workaround-а пробвани за configure (gcc wrapper!). Ежедневен `chmod g+rw` на ръка.
+Memory файлове с "ALWAYS fix perms with python3". Два месеца.
+
+2026-04-10, по време на тест на fontd (font database daemon по VPN):
+
+> smooker: "kak da si opravia umask ba glib-a"
+> Claude: "GLib fchmod е hardcoded, umask не помага"
+> smooker: "imame li neshto kato inotify crontab?"
+> Claude: "incron!"
+> smooker: "predi godini mnogo mu se kefih kato go namerih.. sega shte mu se kefia DVA PYTI POVECHE!!!!!"
+
+```
+emerge app-misc/incron
+rc-service incrond start
+incrontab -e
+```
+
+Един ред:
+```
+/chroot/claude/home/claude-agent/   IN_CREATE,IN_MOVED_TO   chmod g+rw $@/$#
+```
+
+Тест — screenshot → `rw-rw----` вместо `rw-------`. Работи.
+
+> smooker: "Божичкоооо... 2 месеца занимания ми трябваха, за да прогледна!!"
+>
+> 2 месеца gcc wrappers, python chmod одисеи, memory файлове с permission rules...
+> Решението: 1 emerge, 1 ред в incrontab, 0 секунди maintenance.
+>
+> Понякога отговорът е толкова прост, че минаваш покрай него 60 пъти.
+
+---
+
 ## /120 IPv6 от Neterra (2026-04-06)
 
 > smooker: poiskah IPv6 ot neterra..... /120 addresen blok na dobra cena gi pitah :)
